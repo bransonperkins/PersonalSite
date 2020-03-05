@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Contact Me</title>
+    <div th:replace="/fragments/styling :: head-style" ></div>
+</head>
+
+<body>
+
+<div th:replace="/fragments/navbar :: navbar" ></div>
+
+<div class="row">
+				<div class="col-md-12">
+					<center><h5>Please use the form below to reach out to me!</h5></center>
+		
+						<div class="row">
+							<div th:each="contacts:${form}">
+								<div class="col-md-12">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<p th:text="${form.name}"/>
+										</div>
+										<div class="panel-body">
+											<p th:text="${form.email}"/>
+											<p th:text="${form.message}"/>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>
+
+<div class="form">
+	<form action="#" th:action="@{/contact}" th:object="${contact}" method="post">
+		<p>Name:
+		<br> 
+		<input type="text" th:field="*{name}" style="width:700px"></p>
+		
+		<p>Email:
+		<br> 
+		<input type="text" th:field="*{email}" style="width:700px"></p>
+		
+		<p>Message:
+		<br> 
+		<input type="text" th:field="*{message}" style="width:700px; height:120px"></p>
+		
+		<button class="button" type="submit"><a href="/result">Submit</a></button>
+	</form>
+</div>
+</div>
+</div>
+
+<div th:replace="/fragments/styling :: body-links" ></div>
+
+</body>
+
+</html>

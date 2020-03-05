@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Navbar</title>
+	<div th:replace="/fragments/styling :: head-style" ></div>
+</head>
+
+<body>
+    
+<div th:fragment="navbar">
+
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+	
+	<ul class=navbar-nav>
+    <li class="nav-item">
+      	<a class="nav-link" href="/resume">Resume</a>
+      </li>
+       <li class="nav-item">
+      	<a class="nav-link" href="/contact">Contact Me</a>
+      </li>
+     </ul>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Projects
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Maps App</a>
+          <a class="dropdown-item" href="#">Mock of Twitter</a>
+          <a class="dropdown-item" href="#">Weather App</a>
+        </div>
+      </li> 
+    </ul>
+  </div>
+  		<div class="row">
+			<div class="col-sm-6">	
+				<div class="d-flex justify-content-sm-center">
+					<a href="https://github.com/bransonperkins">
+						<img class="github" src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="github logo" style="width:3em;height:3em;">
+					</a>
+				</div>
+			</div>
+			<div class="col-sm-6">	
+				<div class="d-flex justify-content-sm-center">
+					<a href="https://www.linkedin.com/in/branson-perkins-72865094/">
+						<img class="linkedin" src="https://1000logos.net/wp-content/uploads/2017/03/LinkedIn-Logo.png" alt="LinkedIn Icon" style="width:3em;height:3em;">
+					</a>
+				</div>
+			</div>
+		</div>
+</nav>
+
+</div>
+
+	<div th:replace="/fragments/styling :: body-links" ></div>
+	
+</body>
+</html>
